@@ -2,9 +2,10 @@
   margin: 0;
   padding: 0;
   font-family: "Courier New", Courier, monospace;
+  scroll-behavior: smooth;
 }
 
-.navbar {
+#Home {
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
@@ -12,6 +13,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
 .primary {
   font-size: 40px;
@@ -22,6 +24,7 @@
 nav {
   display: flex;
   justify-content: space-between;
+
 }
 
 nav .menu {
@@ -59,15 +62,18 @@ nav .menu-icon {
   cursor: pointer;
   float: right;
   user-select: none;
+ 
+  
 }
 nav .nav-icon {
   display: block;
-  height: 2px;
+  height: 4px;
   width: 18px;
   background-color: white;
   transition: 0.2s ease-out;
   position: relative;
   cursor: pointer;
+  overflow: visible;
 }
 nav .nav-icon::before {
   content: "";
@@ -79,6 +85,7 @@ nav .nav-icon::before {
   top: 5px;
   transition: all 0.2 ease-out;
   cursor: pointer;
+
 }
 
 nav .nav-icon::after {
@@ -91,6 +98,7 @@ nav .nav-icon::after {
   top: -5px;
   transition: all 0.2 ease-out;
   cursor: pointer;
+  
 }
 .menu-btn {
   display: none;
@@ -117,7 +125,7 @@ nav .nav-icon::after {
   margin: 10px 0 40px;
 }
 
-.course {
+.know-more {
   display: inline-block;
   color: white;
   background: transparent;
@@ -129,7 +137,7 @@ nav .nav-icon::after {
   position: relative;
 }
 
-.course:hover {
+.know-more:hover {
   border: 1px solid #f44336;
   background: #f44336;
 }
@@ -144,37 +152,45 @@ nav .nav-icon::after {
 }
 
 @media (max-width: 600px) {
-  .primary {
-    font-size: 30px;
-  }
-  .nav-links .menu li {
-    display: block;
-  }
-  .nav-links .menu li {
-    padding: 30px 0px 0px 10px;
-  }
 
-  .nav-links {
+ *{
+   overflow: hidden;
+   overflow-y: scroll;
+ }
+  
+  #home{
+    position: relative; 
+  }
+  .nav-links{
     position: absolute;
-    height: 652px;
-    width: 200px;
+    text-align: left;
     top: 0;
     right: 100vh;
+    bottom: 0;
+    width: 200px;
     background-color: #f44336;
-    text-align: left;
     z-index: 2;
-    font-size: 25px;
-    padding: 15px 0px 0px 10px;
-    transition: 1s;
+    transition: .8s;
+    
   }
-  nav .menu-icon {
+  .nav-links .menu li{
     display: block;
-    color: white;
-    z-index: 5;
-    margin: 10px 10px;
+    padding: 20px;
+    font-size: 20px;
+  }       
+  nav .menu-icon{
+    display: block;
+    z-index: 3;
+    padding: 10px;
+    margin: 10px;
+   
+   
   }
+ 
+ 
   nav .menu-btn:checked ~ .nav-links {
     right: 0;
+
   }
   nav .menu-btn:checked ~ .menu-icon .nav-icon:before {
     transform: rotate(-45deg);
@@ -198,18 +214,19 @@ nav .nav-icon::after {
   }
 }
 
-.subject {
+#Course {
   display: flex;
   display: block;
   width: 100%;
   height: 100%;
   padding-top: 50px;
   text-align: center;
+  scroll-behavior: smooth;
 }
-.subject .row h1 {
+#Course .row h1 {
   font-size: 30px;
 }
-.subject .row p {
+#Course .row p {
   position: relative;
   padding-top: 10px;
 }
@@ -255,19 +272,19 @@ nav .nav-icon::after {
   display: flex;
 }
 
-.campus {
+#Campus {
   /* display: block; */
   text-align: center;
   margin: auto;
   padding: 20px 0px;
 }
 
-.campus h1 {
+#Campus h1 {
   padding-bottom: 20px;
   font-size: 40px;
 }
 
-.campus p {
+#Campus p {
   padding-bottom: 20px;
 }
 
@@ -312,7 +329,7 @@ nav .nav-icon::after {
 
 /* contact us */
 
-.contact {
+#Contact-us {
   background: black;
   border-radius: 10px;
   margin: 0px 20px;
@@ -335,7 +352,7 @@ nav .nav-icon::after {
   margin-bottom: 20px;
   color: white;
 }
-.contact-us {
+.call {
   display: flex;
   padding-right: 0px;
   border: 3px solid white;
@@ -398,7 +415,7 @@ nav .nav-icon::after {
 }
 
 @media (max-width: 600px){
-  .contact-us{
+  .call{
     width: auto;
     border-radius: 10px;
     border: 3px solid white;
@@ -459,7 +476,8 @@ margin: 0px 70px;
 .fa:hover{
   color: #f44336;
   transition: 0.8s;
-  size: 30px;
+  cursor: pointer;
+
 
 
 }
